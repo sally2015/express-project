@@ -1,0 +1,23 @@
+<script id='ajaxtest' type='text/x-handlebars-template'>
+	Marry hadd a little <b>\{{animal}}</b>
+	its<b>\{{bodyPart}}</b>
+	was <b>\{{adjective}}</b>as <b>\{{noun}}</b>
+</script>
+<button id='btn'>动态获取数据</button>
+<div id="content">
+	
+</div>
+<script>
+	$(document).ready(function(){
+		var template = Handlebars.compile($('#ajaxtest').html());
+		
+		$('#btn').click(function(){
+			$.ajax('/data/ajaxtest',{
+				success:function(data){
+					$('#content').html(template(data));
+				}
+			});
+		});
+	});
+	
+</script>

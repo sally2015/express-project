@@ -1,0 +1,10 @@
+<div class="weatherWeight">
+	{{#each weather.locations}}
+		<div class="location">
+			<h3>{{name}}</h3>
+			<a href="{{forecastUrl}}">
+				{{weather}},{{temp}}
+			</a>
+		</div>
+	{{/each}}
+</div>
